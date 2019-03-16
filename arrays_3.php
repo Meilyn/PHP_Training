@@ -50,17 +50,12 @@
 			</p> <br>
 			<h3>Résultat</h3>
 			<code>
-			<?php echo "l'index 69 est " .$Auvergne['69']. "<br>"; ?>
-			<?php  
-			foreach ($Auvergne as $key => $value) {
-			?>
-
-			<p class="text-justify">
-			<?php 
-	 		echo "Le département ".$value. " ". "as le numero " .$key. "<br>";
-			}
-			?>
-	 		</p>
+				<?php 
+					echo "l'index 69 est " .$Auvergne['69']. "<br>"; 
+					foreach ($Auvergne as $key => $value) {
+			 		echo "Le département ".$value. " ". "as le numero " .$key. "<br>";
+				}
+				?>
 			</code>
 		</div>
 	</div>	

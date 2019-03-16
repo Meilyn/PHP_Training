@@ -26,8 +26,6 @@
       "5" => "May", "6" => "June", "7" => "July", "8" => "August",
       "9" => "September", "10" => "October", "11" => "November", "12" => "December",
   	];
-
-
  ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -83,9 +81,7 @@
 			<p class="text-justify">
 				Afficher le timestamp du jour. Afficher le timestamp du mardi 2 août 2016 à 15h00. <br>
 				<code>
-					<?php 
-					echo $date4;
-					?>
+					<?php echo $date4;?>
 				</code>
 			</p>
 			<h3 id="inv">Exercice N° 5</h3><hr>	
