@@ -6,7 +6,18 @@
 	$collegues = ["Dorian", "Mustafa", "Patrick", "Cat", "Dorothée", "Perry"];
 
 	//Exercice #4
-	$country = ['Honduras','Belgium','Holland','Japan','Mexico','China','Korea','Canada','Roumanie','Brasil'];
+	$country = [
+			'HN'=> 'Honduras',
+	 		'BE'=>'Belgium',
+	 		'NL'=> 'Holland',
+	 		'JP'=> 'Japan',
+	 		'MX'=> 'Mexico',
+	 		'CH'=>'China',
+	 		'KR'=>'Korea',
+	 		'CA'=>'Canada',
+	 		'RO'=> 'Roumanie',
+	 		'BR'=>'Brasil'
+	 	];
 	
  ?>
 <!DOCTYPE html>
@@ -99,8 +110,24 @@
 						<option value="">Veuillez selectioner un pays</option>
 				<code>
 					<?php 
-						foreach ($country as $value) {
-							echo "<option> $value </option>";
+						foreach ($country as $key =>$pays) {
+							echo "<option> $pays </option>";
+						}						
+					?>
+				</code><br>
+					</select>
+			</form>
+			<h3 id="inv">Exercice N° 5</h3><hr>	
+			<p>
+			A présent, modifie ton tableau contenant les pays pour qu'il soit un tableau associatif: la clef est le code ISO du pays, la valeur étant le nom du pays: par exemple: $pays = array('BE'=>'Belgique'); au lieu de simplement $pays = array('Belgique');. Utilise la clef pour qu'elle devienne la valeur de la balise option dans ton html. <br>
+			<form>
+				<label for="pays">Votre Pays</label><br>
+					<select value = "country">
+						<option value="">Veuillez selectioner un pays</option>
+				<code>
+					<?php 
+						foreach ($country as $key =>$pays) {
+							echo "<option> $key </option>";
 						}						
 					?>
 				</code><br>
