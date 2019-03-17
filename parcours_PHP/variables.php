@@ -24,7 +24,27 @@
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark">
-		<i class="fas fa-user-tie">Les Variables</i>
+		<i class="fas fa-user-tie text-align-center"> PHP TRAINING</i>
+		<ul class="nav">
+  			<li class="nav-item">
+    			<a class="nav-link" href="variables.php?nom=Patrick">Variables</a>
+ 			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="conditions.php">Conditions</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="conditions-switch.php">Conditions Switch</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="arrays.php">Tableaux</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="php-boucles.php">Boucles</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="ternaire.php">Ternaires</a>
+			</li>
+		</ul>
 	</nav>
 	<div class="jumbotron">
 		<h1>Humans</h1>

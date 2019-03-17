@@ -75,7 +75,7 @@
 		<i class="fas fa-user-tie text-align-center"> PHP TRAINING</i>
 		<ul class="nav">
   			<li class="nav-item">
-    			<a class="nav-link" href="variables.php">Variables</a>
+    			<a class="nav-link" href="variables.php?nom=Patrick">Variables</a>
  			</li>
 			<li class="nav-item">
 			    <a class="nav-link" href="conditions.php">Conditions</a>
