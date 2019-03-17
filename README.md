@@ -19,6 +19,7 @@
 
 
 ## Exercices
+![Functions](assets/img/fonction.png)
 ![ScreenShots](assets/img/boucles.png)
 
 Ex."Les conditions"

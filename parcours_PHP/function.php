@@ -54,18 +54,7 @@
      //Exercice #11
      	function string($string){
 			return strtolower($string);
-		}
-	//Exercice #12
-		if (isset($_POST['rayon']) AND isset($_POST['hauteur'])) {
-           $ray = $_POST['rayon'];
-           $haut = $_POST['hauteur'];
-            function volumeCone($rayon, $hauteur){
-                $volume = $rayon * $rayon * 3.14 * $hauteur *(1/3);
-               	"Le volume du cône de rayon ".$rayon. " et de hauteur ".$hauteur." est : " . $volume . ' cm<sup>3</sup><br />';  
-            }
-            volumeCone($ray, $haut);
-       }
-       $volume = 5 * 5 * 3.14 * 2 * (1/3);  	   	
+		}  	   	
 
  ?>
 <!DOCTYPE html>
@@ -106,6 +95,9 @@
 			</li>
 			<li class="nav-item">
 			    <a class="nav-link" href="ternaire.php">Ternaires</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="function.php">Functions</a>
 			</li>
 		</ul>
 	</nav>
@@ -216,13 +208,23 @@
 			 <form action="" method="POST">
 			 	<label for="volume">Volume du Cône</label><br>
 			 	<label for="">Rayon</label>
-			 	<input type="number" name="rayon"><br>
+			 	<input type="text" name="rayon"><br>
 			 	<label for="">Hauteur</label>
-			 	<input type="number" name="hauteur">
+			 	<input type="text" name="hauteur">
 			 	<input type="submit"><br>
 				<code>
 					<?php 
-						echo volumeCone($ray, $haut); echo 'Le volume du cône de rayon '.$rayon.' et de hauteur '.$hauteur.' est : ' . $volume . ' cm<sup>3</sup><br />';
+						if (isset($_POST['rayon']) AND isset($_POST['hauteur'])) {
+				           $ray = $_POST['rayon'];
+				           $haut = $_POST['hauteur'];
+
+            			function volumeCone($rayon, $hauteur){
+               				 $volume = $rayon * $rayon * 3.14 * $hauteur *(1/3);
+              				echo "Le volume du cône de rayon ".$rayon. " et de hauteur ".$hauteur." est : " . $volume . ' cm<sup>3</sup><br />';  
+            			}
+            			volumeCone($ray, $haut);
+       				}
+       					$volume = 5 * 5 * 3.14 * 2 * (1/3); 
 					?>
 				</code>
 			</form>	
