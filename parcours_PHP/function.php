@@ -47,9 +47,7 @@
 			return str_replace("æ", "ae", $string)."<br>";
 		}
 	//Exercice #9 
-		function myfunction($msg, $class ="info"){
-            return "<div class='$class'>$msg</div>";
-        }
+		//preg_match
         	
      //Exercice #11
      	function string($string){
@@ -187,11 +185,30 @@
 			<h3 id="inv">Exercice N°9</h3><hr>	
 			<p class="text-justify">
 			Crée une fonction te permettant de gérer des messages envers l'utilisateur grâce à deux arguments: le premier argument est le message, le second permet de spécifier un attribut de classe html qui sera utilisée par le CSS (par exemple: "info", "error", "warning"). Grâce à cette fonction, on pourra écrire en php: <br>
+			<form action="" method="POST">
+				<div class="form-group">
+	    			<label for="Email">Email address</label>
+	   				<input type="email" class="form-control" placeholder="example@gmail.com" name="email"><br>
+	   				<input type="submit">
+  				</div>
 				<code>
 					<?php 
-						echo(myfunction("adresse email incorrecte"));
+						if (isset($_POST['email'])) {
+
+							function email(){
+							$email = $_POST["email"];
+							if (preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $email)) {
+								echo '<div class = "info">Adresse email est correct.</div>';
+							}
+							else {
+								echo '<div class="warning">Adresse email incorrecte.</div>';
+							}
+						}
+						email();
+						}
 					?>
 				</code>
+			</form>	
 			</p>
 			<h3 id="inv">Exercice N°11</h3><hr>	
 			<p class="text-justify">
