@@ -7,7 +7,7 @@
 	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){ // Proxies
 		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 	} else {
-		$ip = $_SERVER['REMOTE_ADDR']; //Actual physical IP address 
+		$ip = $_SERVER['SERVER_ADDR']; //Actual physical IP address 
 	}
 	
 

@@ -1,11 +1,12 @@
 <?php 
-	$DisplayForm = True;
- 		if(isset($_POST['submit'])){
- 			$DisplayForm = False;
- 			echo "Bonjour " .$_POST['civilite']. " " .$_POST['nom'] ." " .$_POST['prenom']." et votre fichier " .$_FILES['userfile']['name'] ." "." ont bien été transmises.";
- 		}
- 		if($DisplayForm){
-	
+	//Verification Fichier PDF
+		function GetExtention($type){
+			if($type == "application/pdf")
+				return "pdf";
+			elseif($type == "application/x-pdf")
+				return "pdf";
+		}
+
  ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,11 +46,21 @@
  				<input type="text" name="nom" class="form-control">
  				<label for="prenom">Prénom</label>
 		 		<input type="text" name="prenom" class="form-control">
-		 		<label for="">Fichier Adjoint</label>
+		 		<label for="">Fichier Adjoint</label><br>
 				<input type="file" name="userfile" id="pdf" accept="application/pdf"><br>
  			</div>
  			<button type="submit" class="btn btn-danger" name="submit">Submit</button><br>
-		</form>	
+ 				<code>
+ 					<?php
+ 					$DisplayForm = True;
+ 							if(isset($_POST['submit'])){
+ 								$DisplayForm = False;
+ 						echo "Bonjour " .$_POST['civilite']. " " .$_POST['nom'] ." " .$_POST['prenom']." votre fichier " .$_FILES['userfile']['name'] ." "." a bien été transmises.";
+ 						}
+ 						if($DisplayForm){
+ 					 ?>
+ 				</code>
+		</form>
 		<?php } ?>				
 </body>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

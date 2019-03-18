@@ -1,6 +1,4 @@
 <?php 
-	// page2.php
-	// Start the session
 	session_start();
 
  ?>

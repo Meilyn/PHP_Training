@@ -62,9 +62,6 @@
 			<li class="nav-item">
 			    <a class="nav-link" href="function.php">Ternaires</a>
 			</li>
-			<li class="nav-item">
-			    <a class="nav-link" href="function.php">Functions</a>
-			</li>
 		</ul>
 	</nav>
 	<div class="jumbotron">

@@ -3,7 +3,7 @@
 	//Securise avec la méthode httpOnly(dernier true)
 	setcookie('email', $_POST['email'],time() + 365*24*3600, null, null, false, true);
 	setcookie('mdp', $_POST['mdp'],time() + 365*24*3600, null, null, false, true);
-	
+
 	//Validate Form Data With PHP htmlspecialchars à été utilisée pour securiser le formulaire 
 	//Supression du character inutiles(space supplementaire, tab , nl [avec function TRIM])
 	//Supression des barres obliques inverses (\) avec function stripslashes
@@ -22,7 +22,15 @@
 		$data = htmlspecialchars($data);
 		return $data;
 	}
-
+	//Sanitisation
+	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+	$mdp = filter_var($mdp,FILTER_SANITIZE_STRING);
+	//Validation
+	if (true === filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		$msg = "Cette adresse email nettoyée est considérée comme valide.";
+	} else {
+		$msg = "Cette adresse email nettoyée n'est pas valide. Désolé.";
+	}
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,6 +60,9 @@
 				<label for="email">Email Adresse</label><br>
 				<input type="email" class="form-control" placeholder="Votre email" name="email">
 				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				<code>
+					<?php echo $msg; ?>
+				</code>
 			</div>
  			<div class="form-group">
  				<label for="mot de passe">Mot de passe</label>
