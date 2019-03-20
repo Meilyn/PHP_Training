@@ -1,10 +1,10 @@
 <?php 
 	//Exercice #8
-	if ($_SERVER['REQUEST_METHOD']==='GET'){
+	if ($_SERVER['REQUEST_METHOD']==='GET'){	
 		$sexe = $_GET['sexe'];
-
-		$bonjour = ($sexe == 'femme')? "Bonjour, Madame " : "Bonjour, Monsieur";
-
+		if(isset($_GET['sexe'])){	
+			$bonjour = ($sexe == 'femme')? "Bonjour, Madame " : "Bonjour, Monsieur";
+		}
 	}	
 										
  ?>

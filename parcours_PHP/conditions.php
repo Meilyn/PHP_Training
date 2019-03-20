@@ -26,7 +26,7 @@
 
  	//Exercice #3
 
-	$today = date('H');
+	$today = date('G');
 		
 		if($today >= 5 AND $today <= 9 ){
 			$message = "Bonjour";
@@ -50,6 +50,7 @@
 	//Exercice #4
 		$age = $_GET['age'];
 
+		if(isset($_GET['age'])){
 			if ($age < 12) {
 				$msg_a = "Salut petit!";
 			}
@@ -62,43 +63,48 @@
 			else {
 				$msg_a = "Wow! Toujours vivant?";
 			}
+		}
+	
 	//Exercice #5
 		$age1 = $_GET['age1'];
 		$genre = $_GET['genre'];
 
-		if ($genre === "femme") {
-			if ($age1 <= 12 ) {
-				$msg_b = "Salut petite!";
-			}
-			elseif ($age1 >= 12 && $age1 <= 18) {
-				$msg_b = "Salut l'adolescente!";
-			}
-			elseif ($age1 >= 18 && $age1 <= 115) {
-				$msg_b = "Salut l'adulte!";
-			}
-			else {
-				$msg_b = "Wow! Toujours vivante?";
-			}
-		}
-		else {
-			if ($age1 <= 12) {
-				$msg_b = "Salut petit!";
-			}
-			elseif ($age1 >= 12 && $age1 <= 18) {
-				$msg_b = "Salut l'ado!";
-			}
-			elseif ($age1 >= 18 && $age1 <= 115) {
-				$msg_b = "Salut l'adult!";
+		if(isset($_GET['age1'],$_GET['genre'])){
+			if ($genre === "femme") {
+				if ($age1 <= 12 ) {
+					$msg_b = "Salut petite!";
+				}
+				elseif ($age1 >= 12 && $age1 <= 18) {
+					$msg_b = "Salut l'adolescente!";
+				}
+				elseif ($age1 >= 18 && $age1 <= 115) {
+					$msg_b = "Salut l'adulte!";
+				}
+				else {
+					$msg_b = "Wow! Toujours vivante?";
+				}
 			}
 			else {
-				$msg_b = "Wow! Toujours vivant?";
+				if ($age1 <= 12) {
+					$msg_b = "Salut petit!";
+				}
+				elseif ($age1 >= 12 && $age1 <= 18) {
+					$msg_b = "Salut l'ado!";
+				}
+				elseif ($age1 >= 18 && $age1 <= 115) {
+					$msg_b = "Salut l'adult!";
+				}
+				else {
+					$msg_b = "Wow! Toujours vivant?";
+				}
 			}
-		}
+		}	
 	//Exercice #6
 		$age2 = $_GET['age2'];
 		$genre2 = $_GET['genre2'];
 		$langue = $_GET['langue'];
 
+	if(isset($_GET['age2'], $_GET['genre2'], $_GET['langue'])){	
 		if ($genre2 == "femme" && $langue == "non") {
 			if ($age2 <= 12 ) {
 				$msg_c = "Salut petite!";
@@ -155,11 +161,11 @@
 				$msg_c = "Wow! Still alive, old man?";
 			}
 		}
-
+	}	
 	//Exercice #7 
 
 		$scores = $_GET['score'];
-	
+		if(isset($_GET['score'])){
 			if ($scores == "nul") {
 				$resultat = "Ce travaile est nul";
 			}
@@ -180,7 +186,8 @@
 			}
 			else{
 				$resultat = "Veuillez selectionner votre score";
-			}								
+			}
+		};									
  ?>
 <!DOCTYPE html>
 <html lang="fr">

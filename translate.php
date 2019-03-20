@@ -4,23 +4,28 @@
 	$deV = $_POST['genre'];
 	$message = "";
 
-	if ($deV != 'homme') {
-		$message = "C'est une Développeuse!!!";
-	}
-	else {
-		$message = "C'est une Développeur!!!";
-	}
+	if(isset($_POST['genre']))	{
+		if ($deV != 'homme') {
+			$message = "C'est une Développeuse!!!";
+		}
+		else {
+			$message = "C'est une Développeur!!!";
+		}
+	}	
 
 	//Exercice N°6
+
 	$monAge = $_POST['age'];
 	$txt = "";
 
-	if ($monAge >= 18) {
-		$txt = "Tu es majeur";
-	}
-	else {
-		$txt = 'Tu n\'es pas majeur';
-	}
+	if(isset($_POST['age'])){
+		if ($monAge >= 18) {
+			$txt = "Tu es majeur";
+		}
+		else {
+			$txt = 'Tu n\'es pas majeur';
+		}
+	}	
 
 	//Exercice N°7
 	$myVar = "true";
@@ -80,7 +85,9 @@
 				<label for="femme">Femme</label>
 				<input type="radio" name="genre" value="femme">
 				<input type="submit" name="submit"><br>
-				<?php echo $message; ?>
+				<code>
+					<?php echo $message; ?>
+				</code>	
 				</form>
 			</p>
 			<h3 id="inv">Exercice N° 6</h3><hr>
@@ -89,7 +96,9 @@
 					<label for="age">Veuillez Int. votre age</label><br>
 					<input type="text" name="age">
 					<input type="submit"><br>
-					<?php echo $txt; ?>
+					<code>
+						<?php echo $txt; ?>
+					</code>	
 				</form>
 			</p>
 			<h3 id="inv">Exercice N° 7</h3><hr>	

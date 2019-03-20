@@ -11,6 +11,17 @@
 	$inC = 1;
 	//Exercice 6
 	$Index = 0;
+
+	//Exercice #1
+	for ($i = 0; $i <=10 ; $i++) { 
+		$message .= $i ."|";
+	}
+	//Exercice #2
+	while ($ic <= 20) {
+		$message2 .= $ic * $num ."|";
+		$ic++;
+	}
+	
  ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -44,9 +55,7 @@
 			</p>
 			<code>
 				<?php 
-					for ($i = 0; $i <=10 ; $i++) { 
-						echo $i ."|";
-					}
+					echo $message;	
 				 ?>
 			</code> <br><br>	 
 			<h3 id="inv">Exercice N° 2 || While </h3><hr>	
@@ -55,10 +64,7 @@
 			</p>
 			<code>
 				<?php 
-				while ($ic <= 20) {
-					echo $ic * $num ."|";
-					$ic++;
-					}	
+					echo $message2;	
 				 ?>
 			</code><br><br>
 			<h3 id="inv">Exercice N°3</h3><hr>	

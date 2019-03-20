@@ -1,10 +1,3 @@
-<?php 
-	//Exercice #1
-	
-
-
-									
- ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -76,7 +69,7 @@
 			</p>
 			<h3 id="inv">Exercice N°5</h3><hr>	
 			<p class="text-justify">
-				Faire une page index.php. Tester sur cette page que tous les paramètres de cette URL existent et les afficher: index.php?semaine=12<br><br>
+				Faire une page index.php. Tester sur cette page que tous les paramètres de cette URL existent et les afficher: urls.php?semaine=12<br><br>
 				 <code>
 					<?php
 					echo $_GET['semaine']; 

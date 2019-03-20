@@ -36,11 +36,13 @@
 		<div class="container">
 			<h3 id="inv">Invitation</h3><hr>
 			<p class="text-justify">
-			<?php  
-			foreach ($invite as $key => $prenom) {
-	 		echo $mail = "Salut " .$prenom. " " ."devine quoi ! Je me marie samedi dans deux semaines ! J'espère te compter parmi les invités ! Gros bisous :)<br>";
-	 			} 
-			?>
+			<code>
+				<?php  
+					foreach ($invite as $key => $prenom) {
+			 			echo $mail = "Salut " .$prenom. " " ."devine quoi ! Je me marie samedi dans deux semaines ! J'espère te compter parmi les invités ! Gros bisous :)<br><br>";
+			 		}		 
+				?>
+			</code>	
 	 		</p>	
 		</div>
 	</div>	

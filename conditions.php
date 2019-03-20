@@ -4,24 +4,28 @@
 	$age1 = $_POST['age1'];
 	$ageM = "";
 
-	if ($age1 >= 18){
-		$ageM = "Vous êtes Majeur <br>";
-	}
-	else {
-		$ageM = "Vous êtes Mineur <br>";
-	}
-   
+	if(isset($_POST['age1'])){
+		if ($age1 >= 18){
+			$ageM = "Vous êtes Majeur <br>";
+		}
+		else {
+			$ageM = "Vous êtes Mineur <br>";
+		}
+	};	
 
 	//Exercice #2
 	$IsEasy = $_POST['IsEasy'];
 	$txt = "";
 
-	if ($IsEasy == true ) {
-			$txt = "C'est Facile!";
-		}	
-		else {
-			$txt = "C'est Difficile!";
-		}
+	if(isset($_POST['IsEasy'], $txt)){
+
+		if ($IsEasy == true ) {
+				$txt = "C'est Facile!";
+			}	
+			else {
+				$txt = "C'est Difficile!";
+			}
+	}		
 
 	//Exercice #3
 	if ($_SERVER['REQUEST_METHOD']=== 'POST') {
@@ -30,15 +34,17 @@
 			$age = $_POST['age'];
 			$message = ""; 
 
-		if ($genre == 'femme' && $age >= 18){
-			$message = "Vous êtes une femme et vous êtes majeur";
-		} else {
-			$message = "Vous êtes une femme et vous êtes mineur";	
-		} if ($genre == 'homme' && $age >= 18) {
-			$message = "Vous êtes un homme et vous êtes majeur";
-		} else {
-			$message = "Vous êtes un homme et vous êtes mineur";
-		}
+		if(isset($_POST['genre'], $_POST['age'], $message))	{
+			if ($genre == 'femme' && $age >= 18){
+				$message = "Vous êtes une femme et vous êtes majeur";
+			} else {
+				$message = "Vous êtes une femme et vous êtes mineur";	
+			} if ($genre == 'homme' && $age >= 18) {
+				$message = "Vous êtes un homme et vous êtes majeur";
+			} else {
+				$message = "Vous êtes un homme et vous êtes mineur";
+			}
+		}	
 	}	
  ?>
 <!DOCTYPE html>
@@ -73,7 +79,9 @@
 					<label for="Age">Votre âge:</label><br>
 					<input type="text" name="age1">
 					<input type="submit" value="OK"><br>
-					<?php echo $ageM; ?>
+					<code>
+						<?php echo $ageM; ?>
+					</code>	
 				</form><br>	<hr>
 			<h3 id="inv">Exercice N° 2 | IsEasy?</h3><hr>
 				<form class="form-group" method="POST">
@@ -83,8 +91,10 @@
 						<option value="false">False</option>
 					</select>
 					<input type="submit" value="OK"><br>
-					<?php echo $txt; ?>
-					<?php echo ($IsEasy == false) ? "C'est Difficile!" : "C'est Facile!";?>
+					<code>
+						<?php echo $txt; ?>
+						<?php echo ($IsEasy == false) ? "C'est Difficile!" : "C'est Facile!";?>
+					</code>	
 				</form><br>
 			<h3>Exercice N° 3 </h3><hr>
 			<p>Veuillez choisir votre genre et age!</p>	
@@ -95,7 +105,9 @@
 					<label for="Femme">Femme</label><br>
 					<input type="text" name="age" placeholder="Vôtre age">
 					<input type="submit" value="OK"><br>
-					<?php echo $message; ?>
+					<code>
+						<?php echo $message; ?>
+					</code>	
 				</form>		 
 		</div>
 	</div>	

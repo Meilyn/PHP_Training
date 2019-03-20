@@ -2,6 +2,7 @@
 	//Exercice #8
 	if ($_SERVER['REQUEST_METHOD']==='GET'){
 		$scores = $_GET['score'];
+		if(isset($_GET['score'])){
 			
 			switch ($scores) {
 				case 'nul':
@@ -25,23 +26,26 @@
 				default:
 					$message= "Veuillez choisir un score";
 			}
+		}	
 	}
 	//Exercice #9
-		$age = $_GET['age'];
-		$sexe = $_GET['sexe'];
+			$age = $_GET['age'];
+			$sexe = $_GET['sexe'];
 
-		if ($sexe == "femme") {
-			if ($age >= 21 && $age <= 40) {
-				$msg = "Bonjour, bienvenue parmi nous!";
+		if(isset($_GET['age'], $_GET['sexe'])){
+			if ($sexe == "femme") {
+				if ($age >= 21 && $age <= 40) {
+					$msg = "Bonjour, bienvenue parmi nous!";
+				}
+			}	
+			else {
+					$msg = "Désolé, vous ne remplissez pas les critères de sélection.";
 			}
 		}	
-			else {
-				$msg = "Désolé, vous ne remplissez pas les critères de sélection.";
-			}
 	//Exercice #10
 		$age = $_GET['age'];
 		$sexe = $_GET['sexe'];
-
+	if(isset($_GET['age'], $_GET['sexe'])){	
 		if ($sexe == "femme") {
 			if ($age >= 21 && $age <= 40) {
 				$msg2 = "Bonjour, bienvenue parmi nous!";
@@ -50,8 +54,7 @@
 			if ($sexe != "femme"){
 				$msg2 = "Désolé, vous ne remplissez pas les critères de sélection.";
 			}
-				
-								
+	}										
  ?>
 <!DOCTYPE html>
 <html lang="fr">
